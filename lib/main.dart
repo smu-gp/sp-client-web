@@ -3,7 +3,15 @@
 // found in the LICENSE file.
 
 import 'package:flutter_web/material.dart';
+import 'package:sp_client/app.dart';
+import 'package:sp_client/repository/local/preference_repository.dart';
+import 'package:sp_client/repository/remote/history_repository.dart';
+import 'package:sp_client/repository/remote/result_repository.dart';
 
 void main() {
-  runApp(new Text('Hello World', textDirection: TextDirection.ltr));
+  runApp(App(
+    historyRepository: RemoteHistoryRepository(),
+    resultRepository: RemoteResultRepository(),
+    preferenceRepository: LocalPreferenceRepository(),
+  ));
 }
