@@ -6,6 +6,7 @@ import 'package:sp_client/service/grpc_service.dart';
 import 'package:sp_client/service/protobuf/connection.pb.dart';
 import 'package:sp_client/service/protobuf/connection.pbenum.dart';
 import 'package:sp_client/util/preference.dart';
+import 'package:sp_client/util/utils.dart';
 import 'package:sp_client/widget/timer_text.dart';
 
 enum _AuthState { none, waitResponse, success, failed }
@@ -38,7 +39,7 @@ class _GuestConnectionDialogState extends State<GuestConnectionDialog> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: Text("Connect another device"),
+      title: Text(AppLocalizations.of(context).titleGuestConnection),
       contentPadding: EdgeInsets.all(0),
       content: Container(
         width: 480.0,
@@ -57,13 +58,13 @@ class _GuestConnectionDialogState extends State<GuestConnectionDialog> {
           FlatButton(
             onPressed: _requestAuth,
             child: Text(
-              "CONNECT",
+              AppLocalizations.of(context).actionConnect,
             ),
           ),
         if (_authState == _AuthState.failed)
           FlatButton(
             child: Text(
-              "RETRY",
+              AppLocalizations.of(context).actionRetry,
             ),
             onPressed: () {
               _textController.clear();
@@ -98,7 +99,7 @@ class _GuestConnectionDialogState extends State<GuestConnectionDialog> {
           CircularProgressIndicator(),
           Padding(
             padding: const EdgeInsets.all(16.0),
-            child: Text("Waiting host response"),
+            child: Text(AppLocalizations.of(context).labelWaitHostResponse),
           ),
           TimerText(
             key: _timerTextKey,
@@ -118,7 +119,7 @@ class _GuestConnectionDialogState extends State<GuestConnectionDialog> {
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Text(
-              "Connect success",
+              AppLocalizations.of(context).labelConnectSuccess,
               style: TextStyle(
                 fontSize: 20.0,
               ),
@@ -138,7 +139,7 @@ class _GuestConnectionDialogState extends State<GuestConnectionDialog> {
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Text(
-              "Connect failed",
+              AppLocalizations.of(context).labelConnectFailed,
               style: TextStyle(
                 fontSize: 20.0,
               ),

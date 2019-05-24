@@ -5,6 +5,7 @@ import 'package:sp_client/model/models.dart';
 import 'package:sp_client/util/preference.dart';
 import 'package:sp_client/util/theme.dart';
 import 'package:sp_client/util/util.dart';
+import 'package:sp_client/util/utils.dart';
 import 'package:sp_client/widget/edit_text_dialog.dart';
 import 'package:sp_client/widget/sub_header.dart';
 
@@ -31,7 +32,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
       builder: (BuildContext context, PreferenceState state) {
         return Scaffold(
           appBar: AppBar(
-            title: Text("Settings"),
+            title: Text(AppLocalizations.of(context).actionSettings),
             elevation: 0.0,
           ),
           body: Padding(
@@ -61,7 +62,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
       if (Util.isTablet(context))
         _buildGuestConnectionPreference(),
       _SwitchPreference(
-        title: "Light theme",
+        title: AppLocalizations.of(context).labelLightTheme,
         preference: prefLightTheme,
         onChanged: (value) {
           _themeBloc.dispatch(
@@ -135,7 +136,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
   _Preference _buildGuestConnectionPreference() {
     return _Preference(
-      title: "Connect another device",
+      title: AppLocalizations.of(context).titleGuestConnection,
       // onTap: () {
       //   showDialog(
       //     context: context,

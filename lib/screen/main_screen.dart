@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sp_client/bloc/blocs.dart';
 import 'package:sp_client/model/models.dart';
 import 'package:sp_client/screen/settings_screen.dart';
+import 'package:sp_client/util/localization.dart';
 import 'package:sp_client/util/util.dart';
 import 'package:sp_client/widget/history_list.dart';
 import 'package:sp_client/widget/sort_dialog.dart';
@@ -77,7 +78,7 @@ class _MainScreenState extends State<MainScreen> {
             )),
       title: Text(
         (state is UnSelectableList
-            ? "History"
+            ? AppLocalizations.of(context).titleHistory
             : (state as SelectableList).selectedItemCount.toString()),
         style: TextStyle(
           fontWeight: FontWeight.bold,
@@ -171,10 +172,12 @@ class _MainScreenState extends State<MainScreen> {
       actions.addAll([
         IconButton(
           icon: Icon(Icons.edit),
+          tooltip: AppLocalizations.of(context).actionEdit,
           onPressed: actionEdit,
         ),
         IconButton(
           icon: Icon(Icons.settings),
+          tooltip: AppLocalizations.of(context).actionSettings,
           onPressed: actionSettings,
         )
       ]);
@@ -183,12 +186,12 @@ class _MainScreenState extends State<MainScreen> {
         PopupMenuButton<MainMenuItem>(
           itemBuilder: (context) => [
                 PopupMenuItem<MainMenuItem>(
-                  child: Text("Edit"),
+                  child: Text(AppLocalizations.of(context).actionEdit),
                   height: 56.0,
                   value: MainMenuItem.actionEdit,
                 ),
                 PopupMenuItem<MainMenuItem>(
-                  child: Text("Settings"),
+                  child: Text(AppLocalizations.of(context).actionSettings),
                   height: 56.0,
                   value: MainMenuItem.actionSettings,
                 ),
@@ -210,7 +213,7 @@ class _MainScreenState extends State<MainScreen> {
     return [
       IconButton(
         icon: Icon(Icons.delete),
-        tooltip: "Delete",
+        tooltip: AppLocalizations.of(context).actionDelete,
         onPressed: () {
           var state = _historyListBloc.currentState as SelectableList;
           var items = state.selectedItems;
