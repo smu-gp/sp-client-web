@@ -43,10 +43,10 @@ class _AppState extends State<App> {
       usagePreferences: AppPreferences.preferences,
     );
 
-    // var lightTheme =
-    //     widget.preferenceRepository.getBool(AppPreferences.keyLightTheme);
-    // var initTheme = !lightTheme ? AppThemes.defaultTheme : AppThemes.lightTheme;
-    _themeBloc = ThemeBloc(AppThemes.defaultTheme);
+    var lightTheme =
+        widget.preferenceRepository.getBool(AppPreferences.keyLightTheme);
+    var initTheme = !lightTheme ? AppThemes.defaultTheme : AppThemes.lightTheme;
+    _themeBloc = ThemeBloc(initTheme);
   }
 
   @override
