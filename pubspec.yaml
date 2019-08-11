@@ -20,8 +20,6 @@ dependencies:
   # Widgets
   outline_material_icons:
     path: packages/outline_material_icons
-  flutter_staggered_grid_view:
-    path: packages/flutter_staggered_grid_view
   # Firebase
   firebase: ^5.0.4
 

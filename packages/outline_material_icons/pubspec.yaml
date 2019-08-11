@@ -1,0 +1,21 @@
+name: outline_material_icons
+description: Provides the new outline theme of material design icons from Google.
+version: 0.1.0
+author: Lucas Levin <mail@lucasappco.com>
+homepage: https://github.com/lucaslcode/outline_material_icons
+
+environment:
+  sdk: ">=2.3.0 <3.0.0"
+
+dependencies:
+  flutter_web: any
+  flutter_web_ui: any
+
+flutter_web:
+  git:
+    url: https://github.com/flutter/flutter_web
+    path: packages/flutter_web
+  flutter_web_ui:
+    git:
+      url: https://github.com/flutter/flutter_web
+      path: packages/flutter_web_ui
