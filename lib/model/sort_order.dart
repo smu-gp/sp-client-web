@@ -1,1 +1,0 @@
-enum SortOrder { createdAtAsc, createdAtDes }

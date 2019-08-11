@@ -1,3 +1,72 @@
+# 0.20.0
+
+- Add Automatic Bloc Lookup to `BlocBuilder` and `BlocListener` ([#415](https://github.com/felangel/bloc/pull/415))
+- Support for `BlocProvider` instantiation and look-up within the same `BuildContext` ([#415](https://github.com/felangel/bloc/pull/415))
+- Documentation Updates
+
+# 0.19.1
+
+Add optional `condition` to `BlocListener` to control listener calls ([#406](https://github.com/felangel/bloc/pull/406)) and Documentation Updates
+
+# 0.19.0
+
+Addresses [#354](https://github.com/felangel/bloc/issues/354)
+
+#### BlocProvider
+
+- Refactor `BlocProvider` to extend `Provider`
+- Rename `BlocProviderTree` to `MultiBlocProvider`
+
+#### ImmutableProvider
+
+- Refactor `ImmutableProvider` to extend `Provider`
+- Rename `ImmutableProvider` to `RepositoryProvider`
+- Rename `ImmutableProviderTree` to `MultiRepositoryProvider`
+
+#### BlocListener
+
+- Rename `BlocListenerTree` to `MultiBlocListener`
+
+#### Documentation
+
+- Inline documentation updates/improvements
+
+# 0.18.3
+
+Fix `BlocProvider` bug where `copyWith` does not preserve `dispose` value ([#376](https://github.com/felangel/bloc/issues/376)).
+
+# 0.18.2
+
+Fix `BlocListener` bug where `listener` gets called even when no state change occurs ([#368](https://github.com/felangel/bloc/issues/368)).
+
+# 0.18.1
+
+Minor Documentation Updates
+
+# 0.18.0
+
+Expose `ImmutableProvider` & `ImmutableProviderTree` to enable developers to provide immutable values, such as repositories, throughout the widget tree ([#364](https://github.com/felangel/bloc/pull/364)) and Documentation Updates
+
+# 0.17.0
+
+Update `BlocProvider` to automatically `dispose` the provided bloc ([#349](https://github.com/felangel/bloc/pull/349)) and Documentation Updates
+
+# 0.16.0
+
+Update `BlocProvider` to expose `builder` and `dispose` ([#344](https://github.com/felangel/bloc/pull/344) and [#347](https://github.com/felangel/bloc/pull/347)) and Documentation Updates
+
+# 0.15.1
+
+Fix `null` initial `previousState` in `BlocBuilder` `condition` ([#328](https://github.com/felangel/bloc/issues/328)) and Documentation Updates
+
+# 0.15.0
+
+Added optional `condition` to `BlocBuilder` to control widget rebuilds ([#315](https://github.com/felangel/bloc/issues/315)) and Documentation Updates
+
+# 0.14.0
+
+Updated to `bloc: ^0.14.0` and Documentation Updates
+
 # 0.13.0
 
 Updated to `bloc: ^0.13.0` and Documentation Updates

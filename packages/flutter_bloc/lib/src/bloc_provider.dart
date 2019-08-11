@@ -1,61 +1,84 @@
 import 'package:flutter_web/widgets.dart';
-
+import 'package:meta/meta.dart';
+import 'package:provider/provider.dart';
 import 'package:bloc/bloc.dart';
 
-/// A Flutter widget which provides a bloc to its children via `BlocProvider.of(context)`.
-/// It is used as a DI widget so that a single instance of a bloc can be provided
-/// to multiple widgets within a subtree.
-class BlocProvider<T extends Bloc<dynamic, dynamic>> extends InheritedWidget {
-  /// The [Bloc] which is to be made available throughout the subtree
-  final T bloc;
-
-  /// The [Widget] and its descendants which will have access to the [Bloc].
-  final Widget child;
-
+class BlocProvider<T extends Bloc<dynamic, dynamic>> extends Provider<T> {
+  /// Takes a [ValueBuilder] that is responsible for
+  /// building the bloc and a child which will have access to the bloc via `BlocProvider.of(context)`.
+  /// It is used as a dependency injection (DI) widget so that a single instance of a bloc can be provided
+  /// to multiple widgets within a subtree.
+  ///
+  /// Automatically handles disposing the bloc when used with a `builder`.
+  ///
+  /// ```dart
+  /// BlocProvider(
+  ///   builder: (BuildContext context) => BlocA(),
+  ///   child: ChildA(),
+  /// );
+  /// ```
   BlocProvider({
     Key key,
-    @required this.bloc,
-    this.child,
-  })  : assert(bloc != null),
-        super(key: key, child: child);
+    @required ValueBuilder<T> builder,
+    Widget child,
+  }) : super(
+          key: key,
+          builder: builder,
+          dispose: (_, bloc) => bloc?.dispose(),
+          child: child,
+        );
 
-  /// Method that allows widgets to access the bloc as long as their `BuildContext`
-  /// contains a `BlocProvider` instance.
+  /// Takes a `Bloc` and a child which will have access to the bloc via `BlocProvider.of(context)`.
+  /// When `BlocProvider.value` is used, the bloc will not be automatically disposed.
+  /// As a result, `BlocProvider.value` should mainly be used for providing existing blocs
+  /// to new routes.
+  ///
+  /// A new bloc should not be created in `BlocProvider.value`.
+  /// Blocs should always be created using the default constructor within the `builder`.
+  ///
+  /// ```dart
+  /// BlocProvider.value(
+  ///   value: BlocProvider.of<BlocA>(context),
+  ///   child: ScreenA(),
+  /// );
+  BlocProvider.value({
+    Key key,
+    @required T value,
+    Widget child,
+  }) : super.value(
+          key: key,
+          value: value,
+          child: child,
+        );
+
+  /// Method that allows widgets to access a bloc instance as long as their `BuildContext`
+  /// contains a [BlocProvider] instance.
+  ///
+  /// If we want to access an instance of `BlocA` which was provided higher up in the widget tree
+  /// we can do so via:
+  ///
+  /// ```dart
+  /// BlocProvider.of<BlocA>(context)
+  /// ```
   static T of<T extends Bloc<dynamic, dynamic>>(BuildContext context) {
-    final type = _typeOf<BlocProvider<T>>();
-    final BlocProvider<T> provider = context
-        .ancestorInheritedElementForWidgetOfExactType(type)
-        ?.widget as BlocProvider<T>;
-
-    if (provider == null) {
+    try {
+      return Provider.of<T>(context, listen: false);
+    } catch (_) {
       throw FlutterError(
         """
         BlocProvider.of() called with a context that does not contain a Bloc of type $T.
         No ancestor could be found starting from the context that was passed to BlocProvider.of<$T>().
-        This can happen if the context you use comes from a widget above the BlocProvider.
-        This can also happen if you used BlocProviderTree and didn\'t explicity provide 
-        the BlocProvider types: BlocProvider(bloc: $T()) instead of BlocProvider<$T>(bloc: $T()).
+
+        This can happen if:
+        1. The context you used comes from a widget above the BlocProvider.
+        2. You used MultiBlocProvider and didn\'t explicity provide the BlocProvider types.
+
+        Good: BlocProvider<$T>(builder: (context) => $T())
+        Bad: BlocProvider(builder: (context) => $T()).
+
         The context used was: $context
         """,
       );
     }
-    return provider?.bloc;
   }
-
-  /// Clone the current [BlocProvider] with a new child [Widget].
-  /// All other values, including [Key] and [Bloc] are preserved.
-  BlocProvider<T> copyWith(Widget child) {
-    return BlocProvider<T>(
-      key: key,
-      bloc: bloc,
-      child: child,
-    );
-  }
-
-  /// Necessary to obtain generic [Type]
-  /// https://github.com/dart-lang/sdk/issues/11923
-  static Type _typeOf<T>() => T;
-
-  @override
-  bool updateShouldNotify(BlocProvider oldWidget) => false;
 }

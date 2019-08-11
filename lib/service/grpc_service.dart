@@ -1,29 +1,15 @@
-import 'package:grpc/grpc.dart';
+import 'package:grpc/grpc_web.dart';
 import 'package:meta/meta.dart';
 import 'package:sp_client/service/protobuf/connection.pbgrpc.dart';
 
 class GrpcService {
   final String host;
-  final Duration timeout;
-  ClientChannel _channel;
+  GrpcWebClientChannel _channel;
 
   ConnectionServiceClient connectionServiceClient;
 
-  GrpcService({
-    @required this.host,
-    this.timeout = const Duration(seconds: 10),
-  }) {
-    _channel = ClientChannel(
-      host,
-      port: 8001,
-      options: const ChannelOptions(credentials: ChannelCredentials.insecure()),
-    );
-
-    connectionServiceClient = ConnectionServiceClient(
-      _channel,
-      options: CallOptions(
-        timeout: timeout,
-      ),
-    );
+  GrpcService({@required this.host}) {
+    _channel = GrpcWebClientChannel.xhr(Uri.parse('http://$host:8002'));
+    connectionServiceClient = ConnectionServiceClient(_channel);
   }
 }

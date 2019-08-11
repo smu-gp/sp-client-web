@@ -1,26 +1,20 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_web/material.dart';
-import 'package:sp_client/repository/repositories.dart';
-import 'package:sp_client/screen/main_screen.dart';
-import 'package:sp_client/util/localization.dart';
-import 'package:sp_client/util/preference.dart';
-import 'package:sp_client/util/theme.dart';
+import 'package:sp_client/screen/init_screen.dart';
+import 'package:uuid/uuid.dart';
 
 import 'bloc/blocs.dart';
+import 'repository/repositories.dart';
+import 'screen/main_screen.dart';
+import 'util/utils.dart';
 
 class App extends StatefulWidget {
-  final HistoryRepository historyRepository;
-  final ResultRepository resultRepository;
   final PreferenceRepository preferenceRepository;
 
   App({
     Key key,
-    @required this.historyRepository,
-    @required this.resultRepository,
     @required this.preferenceRepository,
-  })  : assert(historyRepository != null),
-        assert(resultRepository != null),
-        assert(preferenceRepository != null),
+  })  : assert(preferenceRepository != null),
         super(key: key);
 
   @override
@@ -28,64 +22,97 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
-  HistoryBloc _historyBloc;
-  ResultBloc _resultBloc;
+  String _userId;
   ThemeBloc _themeBloc;
-  PreferenceBloc _preferenceBloc;
+  AuthBloc _authBloc;
+  MemoBloc _memoBloc;
+  FolderBloc _folderBloc;
+
+  UserRepository _userRepository;
 
   @override
   void initState() {
     super.initState();
-    _historyBloc = HistoryBloc(repository: widget.historyRepository);
-    _resultBloc = ResultBloc(repository: widget.resultRepository);
-    _preferenceBloc = PreferenceBloc(
-      repository: widget.preferenceRepository,
-      usagePreferences: AppPreferences.preferences,
+    _userId = widget.preferenceRepository.getString(
+      AppPreferences.keyUserId,
     );
+    if (_userId == null) {
+      _userId = Uuid().v4();
+      widget.preferenceRepository.setString(AppPreferences.keyUserId, _userId);
+    }
 
-    var lightTheme =
-        widget.preferenceRepository.getBool(AppPreferences.keyLightTheme);
-    var initTheme = !lightTheme ? AppThemes.defaultTheme : AppThemes.lightTheme;
+    _userRepository = FirebaseUserRepository();
+
+    var darkMode =
+        widget.preferenceRepository.getBool(AppPreferences.keyDarkMode);
+    var initTheme =
+        (darkMode ?? false) ? AppThemes.darkTheme : AppThemes.lightTheme;
+
     _themeBloc = ThemeBloc(initTheme);
+
+    _authBloc = AuthBloc(
+      userRepository: _userRepository,
+    )..dispatch(AppStarted(_userId));
+
+    _memoBloc = MemoBloc(
+      memoRepository: FirebaseMemoRepository(),
+    );
+    _folderBloc = FolderBloc(
+      folderRepository: FirebaseFolderRepository(),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
-    return BlocProviderTree(
-      blocProviders: [
-        BlocProvider<HistoryBloc>(bloc: _historyBloc),
-        BlocProvider<ResultBloc>(bloc: _resultBloc),
-        BlocProvider<PreferenceBloc>(bloc: _preferenceBloc),
-        BlocProvider<ThemeBloc>(bloc: _themeBloc),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<ThemeBloc>.value(
+          value: _themeBloc,
+        ),
+        BlocProvider<AuthBloc>.value(
+          value: _authBloc,
+        ),
+        BlocProvider<MemoBloc>.value(
+          value: _memoBloc,
+        ),
+        BlocProvider<FolderBloc>.value(
+          value: _folderBloc,
+        ),
       ],
-      child: BlocBuilder<ThemeData, ThemeData>(
-        bloc: _themeBloc,
-        builder: (context, snapshot) {
-          return MaterialApp(
-            onGenerateTitle: (context) => AppLocalizations.of(context).appName,
-            theme: snapshot,
-            localizationsDelegates: [
-              const AppLocalizationsDelegate(),
-              // GlobalMaterialLocalizations.delegate,
-              // GlobalWidgetsLocalizations.delegate,
-            ],
-            supportedLocales: [
-              const Locale('en', 'US'),
-              const Locale('ko', 'KR'),
-            ],
-            home: MainScreen(),
-            debugShowCheckedModeBanner: false,
-          );
-        },
+      child: RepositoryProvider<PreferenceRepository>.value(
+        value: widget.preferenceRepository,
+        child: BlocBuilder<ThemeBloc, ThemeData>(
+          builder: (context, themeState) {
+            return MaterialApp(
+              onGenerateTitle: (context) =>
+                  AppLocalizations.of(context).appName,
+              theme: themeState,
+              localizationsDelegates: [
+                const AppLocalizationsDelegate(),
+              ],
+              supportedLocales: [
+                const Locale('en', 'US'),
+                const Locale('ko', 'KR'),
+              ],
+              home: BlocBuilder<AuthBloc, AuthState>(
+                builder: (context, authState) {
+                  if (authState is Authenticated) {
+                    _memoBloc.dispatch(UpdateMemoUser(authState.uid));
+                    _folderBloc.dispatch(UpdateFolderUser(authState.uid));
+                    return MainScreen();
+                  } else {
+                    return BlocProvider(
+                      builder: (context) =>
+                          LoginBloc(userRepository: _userRepository),
+                      child: InitScreen(userId: _userId),
+                    );
+                  }
+                },
+              ),
+            );
+          },
+        ),
       ),
     );
-  }
-
-  @override
-  void dispose() {
-    _historyBloc.dispose();
-    _resultBloc.dispose();
-    _preferenceBloc.dispose();
-    super.dispose();
   }
 }

@@ -1,13 +1,32 @@
-[{
+[
+  {
     "family": "MaterialIcons",
-    "fonts": [{
-      "asset": "https://fonts.gstatic.com/s/materialicons/v42/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2"
-    }]
+    "fonts": [
+      {
+        "asset": "https://fonts.gstatic.com/s/materialicons/v42/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2"
+      }
+    ]
   },
   {
-    "family": "OpenSans",
-    "fonts": [{
-      "asset": "OpenSans-Regular.ttf"
-    }]
+    "family": "NotoSansKR",
+    "fonts": [
+      {
+        "asset": "fonts/NotoSansKR-Bold.otf"
+      },
+      {
+        "asset": "fonts/NotoSansKR-Medium.otf"
+      },
+      {
+        "asset": "fonts/NotoSansKR-Regular.otf"
+      }
+    ]
+  },
+  {
+    "family": "outline_material_icons",
+    "fonts": [
+      {
+        "asset": "fonts/outline_material_icons.ttf"
+      }
+    ]
   }
 ]

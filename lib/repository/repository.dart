@@ -1,39 +1,27 @@
-import 'package:sp_client/model/folder.dart';
-import 'package:sp_client/model/history.dart';
-import 'package:sp_client/model/result.dart';
+import 'package:sp_client/model/models.dart';
 
-abstract class HistoryRepository {
-  Future<History> create(History newData);
+abstract class MemoRepository {
+  Future<void> addNewMemo(Memo memo);
 
-  Future<History> readById(int id);
+  Future<void> deleteMemo(Memo memo);
 
-  Future<List<History>> readAll({String sortColumn, bool sortAscending = true});
+  Stream<List<Memo>> memos();
 
-  Future<bool> update(History history);
+  Future<void> updateMemo(Memo memo);
 
-  Future<bool> delete(int id);
-}
-
-abstract class ResultRepository {
-  Future<Result> create(Result newData);
-
-  Future<Result> readById(int id);
-
-  Future<List<Result>> readByHistoryId(int historyId);
-
-  Future<bool> delete(int id);
-
-  Future<int> deleteByHistoryId(int historyId);
+  void updateUserId(String userId);
 }
 
 abstract class FolderRepository {
-  Future<Folder> create(Folder newData);
+  Future<void> addNewFolder(Folder folder);
 
-  Future<List<Folder>> readAll();
+  Future<void> deleteFolder(Folder folder);
 
-  Future<bool> update(Folder folder);
+  Stream<List<Folder>> folders();
 
-  Future<bool> delete(int id);
+  Future<void> updateFolder(Folder folder);
+
+  void updateUserId(String userId);
 }
 
 abstract class PreferenceRepository {
@@ -48,4 +36,16 @@ abstract class PreferenceRepository {
   Future<bool> setBool(String key, bool value);
 
   Future<bool> setInt(String key, int value);
+}
+
+abstract class UserRepository {
+  Future<User> signIn(String uid);
+
+  Future signOut();
+
+  Future<bool> isSignedIn();
+
+  Future<User> getUser();
+
+  Future<User> updateProfile({String displayName, String email});
 }

@@ -1,46 +1,63 @@
 import 'package:flutter_web/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:sp_client/bloc/blocs.dart';
+import 'package:provider/provider.dart';
 import 'package:sp_client/model/models.dart';
 import 'package:sp_client/util/localization.dart';
+import 'package:sp_client/widget/sub_header.dart';
 
 class SortDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var bloc = BlocProvider.of<HistoryBloc>(context);
     return AlertDialog(
       title: Text(AppLocalizations.of(context).actionSort),
       contentPadding: const EdgeInsets.symmetric(
         vertical: 24.0,
         horizontal: 0.0,
       ),
-      content: BlocBuilder<HistoryEvent, HistoryState>(
-        bloc: BlocProvider.of<HistoryBloc>(context),
-        builder: (BuildContext context, HistoryState state) {
+      content: Consumer<MemoSort>(
+        builder: (context, sortValue, _) {
           return Wrap(
             children: <Widget>[
-              RadioListTile<SortOrder>(
-                  activeColor: Theme.of(context).accentColor,
-                  title: Text(AppLocalizations.of(context).orderCreatedDes),
-                  value: SortOrder.createdAtDes,
-                  groupValue: (state is HistoryLoaded
-                      ? state.order
-                      : SortOrder.createdAtDes),
-                  onChanged: (value) {
-                    bloc.dispatch(LoadHistory(value));
-                    Navigator.pop(context);
-                  }),
-              RadioListTile<SortOrder>(
-                  activeColor: Theme.of(context).accentColor,
-                  title: Text(AppLocalizations.of(context).orderCreatedAsc),
-                  value: SortOrder.createdAtAsc,
-                  groupValue: (state is HistoryLoaded
-                      ? state.order
-                      : SortOrder.createdAtDes),
-                  onChanged: (value) {
-                    bloc.dispatch(LoadHistory(value));
-                    Navigator.pop(context);
-                  }),
+              RadioListTile<SortOrderBy>(
+                activeColor: Theme.of(context).accentColor,
+                title: Text(AppLocalizations.of(context).orderByCreated),
+                value: SortOrderBy.createdAt,
+                groupValue: sortValue.orderBy,
+                onChanged: (value) {
+                  sortValue.orderBy = value;
+                  Navigator.pop(context);
+                },
+              ),
+              RadioListTile<SortOrderBy>(
+                activeColor: Theme.of(context).accentColor,
+                title: Text(AppLocalizations.of(context).orderByUpdated),
+                value: SortOrderBy.updatedAt,
+                groupValue: sortValue.orderBy,
+                onChanged: (value) {
+                  sortValue.orderBy = value;
+                  Navigator.pop(context);
+                },
+              ),
+              SubHeader(AppLocalizations.of(context).orderType),
+              RadioListTile<SortOrderType>(
+                activeColor: Theme.of(context).accentColor,
+                title: Text(AppLocalizations.of(context).orderTypeAsc),
+                value: SortOrderType.Asc,
+                groupValue: sortValue.orderType,
+                onChanged: (value) {
+                  sortValue.orderType = value;
+                  Navigator.pop(context);
+                },
+              ),
+              RadioListTile<SortOrderType>(
+                activeColor: Theme.of(context).accentColor,
+                title: Text(AppLocalizations.of(context).orderTypeDes),
+                value: SortOrderType.Des,
+                groupValue: sortValue.orderType,
+                onChanged: (value) {
+                  sortValue.orderType = value;
+                  Navigator.pop(context);
+                },
+              ),
             ],
           );
         },
