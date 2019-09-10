@@ -2,7 +2,6 @@ import 'package:flutter_web/material.dart';
 import 'package:sp_client/model/models.dart';
 import 'package:sp_client/util/constants.dart';
 import 'package:sp_client/util/utils.dart';
-import 'package:sp_client/widget/rich_text/spannable_list.dart';
 
 class MemoItem extends StatelessWidget {
   final Memo memo;
