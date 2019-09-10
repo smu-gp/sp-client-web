@@ -1,0 +1,526 @@
+{
+  "@@locale": "ko",
+  "@@last_modified": "2019-07-29T11:34:19.977185",
+  "actionAccept": "허용",
+  "@actionAccept": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "actionAdd": "추가",
+  "@actionAdd": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "actionAddFolder": "폴더 추가",
+  "@actionAddFolder": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "actionAddMemo": "메모 추가",
+  "@actionAddMemo": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "actionAddTextFromImage": "이미지에서 텍스트 가져오기",
+  "@actionAddTextFromImage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "actionConnect": "연결",
+  "@actionConnect": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "actionConnection": "연결",
+  "@actionConnection": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "actionCreateNewFolder": "새 폴더 생성",
+  "@actionCreateNewFolder": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "actionDarkMode": "야간 모드",
+  "@actionDarkMode": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "actionDate": "날짜",
+  "@actionDate": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "actionDelete": "삭제",
+  "@actionDelete": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "actionEdit": "편집",
+  "@actionEdit": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "actionFolder": "폴더",
+  "@actionFolder": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "actionManageFolder": "폴더 관리",
+  "@actionManageFolder": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "actionMoveFolder": "다른 폴더로 이동",
+  "@actionMoveFolder": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "actionNotes": "메모",
+  "@actionNotes": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "actionReject": "거부",
+  "@actionReject": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "actionRemoveFolder": "폴더 삭제",
+  "@actionRemoveFolder": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "actionRename": "이름 변경",
+  "@actionRename": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "actionRenameFolder": "폴더 이름 변경",
+  "@actionRenameFolder": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "actionRetry": "재시도",
+  "@actionRetry": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "actionSecretFolder": "비밀 폴더",
+  "@actionSecretFolder": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "actionSendImage": "이미지 보내기",
+  "@actionSendImage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "actionSettings": "설정",
+  "@actionSettings": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "actionSort": "정렬",
+  "@actionSort": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "appName": "sp_client",
+  "@appName": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "dialogConnectionWithDevice": "이 기기와 연결할까요?",
+  "@dialogConnectionWithDevice": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "dialogDeleteFolder": "폴더 내 모든 기록들이 기본 폴더로 이동됩니다. 폴더를 삭제할까요?",
+  "@dialogDeleteFolder": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "dialogDeleteItem": "삭제할까요?",
+  "@dialogDeleteItem": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "dialogFolderSelect": "폴더 선택",
+  "@dialogFolderSelect": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "dialogSendImage": "이미지 보내는 중...",
+  "@dialogSendImage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "errorEmptyCode": "오류: 연결 코드는 비워둘 수 없습니다",
+  "@errorEmptyCode": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "errorEmptyName": "오류: 이름은 비워둘 수 없습니다",
+  "@errorEmptyName": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "folderDefault": "기본",
+  "@folderDefault": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "hintConnectAnotherDevice": "연결코드로 다른 기기에 연결합니다",
+  "@hintConnectAnotherDevice": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "hintGenerateCode": "다른 기기에서 연결하기 위해 코드를 생성합니다",
+  "@hintGenerateCode": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "hintInputNote": "메모",
+  "@hintInputNote": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "hintInputTitle": "제목",
+  "@hintInputTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "hintName": "* 다른 기기에서 표시할 이름을 설정합니다",
+  "@hintName": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "imageFromCamera": "사진 촬영",
+  "@imageFromCamera": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "imageFromGallery": "이미지 선택",
+  "@imageFromGallery": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelAppInitialize": "초기화하는 중...",
+  "@labelAppInitialize": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelAuthFailed": "인증 실패",
+  "@labelAuthFailed": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelChangePinCode": "PIN 번호 변경",
+  "@labelChangePinCode": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelConnectFailed": "연결 실패",
+  "@labelConnectFailed": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelConnectionCode": "연결코드",
+  "@labelConnectionCode": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelConnectSuccess": "연결 성공",
+  "@labelConnectSuccess": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelDefaultMemoType": "기본 메모 유형",
+  "@labelDefaultMemoType": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelDisconnectAnother": "다른 기기에서 연결 해제",
+  "@labelDisconnectAnother": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelHandWriting": "손글씨",
+  "@labelHandWriting": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelInternalErr": "서버 내부 오류",
+  "@labelInternalErr": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelLightTheme": "밝은 테마",
+  "@labelLightTheme": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelMarkdown": "마크다운",
+  "@labelMarkdown": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelName": "이름",
+  "@labelName": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelNoHostWaited": "연결하려는 기기가 기다리지 않음",
+  "@labelNoHostWaited": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelNone": "없음",
+  "@labelNone": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelQuickFolderClassification": "빠른 폴더 분류",
+  "@labelQuickFolderClassification": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelRejectHost": "연결하려는 기기가 거부함",
+  "@labelRejectHost": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelResponseTimeout": "연결하는 기기의 응답시간 만료",
+  "@labelResponseTimeout": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelRichText": "서식 있는 텍스트",
+  "@labelRichText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelServiceHost": "서비스 호스트",
+  "@labelServiceHost": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelServiceUnavailable": "서비스 사용할 수 없음",
+  "@labelServiceUnavailable": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelUnnamed": "이름 없음",
+  "@labelUnnamed": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelUpdateProfile": "프로필 업데이트",
+  "@labelUpdateProfile": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelUseFingerprint": "지문 사용",
+  "@labelUseFingerprint": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelVersion": "버전",
+  "@labelVersion": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelWaitConnection": "연결 중...",
+  "@labelWaitConnection": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelWaitHostResponse": "연결하려는 기기의 응답을 기다리는 중",
+  "@labelWaitHostResponse": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelWriteNewNoteOnStartup": "앱 시작 시 새 메모 작성",
+  "@labelWriteNewNoteOnStartup": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "memoEmpty": "메모가 비어있습니다",
+  "@memoEmpty": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "memoError": "메모를 불러오는 데 오류가 발생하였습니다",
+  "@memoError": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "orderByCreated": "만든 날짜 순",
+  "@orderByCreated": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "orderByUpdated": "수정 날짜 순",
+  "@orderByUpdated": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "orderCreatedAsc": "추가한 날짜 오름차순",
+  "@orderCreatedAsc": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "orderCreatedDes": "추가한 날짜 내림차순",
+  "@orderCreatedDes": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "orderType": "순서",
+  "@orderType": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "orderTypeAsc": "오름차순",
+  "@orderTypeAsc": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "orderTypeDes": "내림차순",
+  "@orderTypeDes": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "subtitleDebug": "디버그",
+  "@subtitleDebug": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "subtitleInfo": "정보",
+  "@subtitleInfo": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "subtitleNote": "메모",
+  "@subtitleNote": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "subtitleQuickFolderClassification": "메모 제목을 작성할때 폴더를 분류합니다",
+  "@subtitleQuickFolderClassification": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "subtitleSecurity": "보안",
+  "@subtitleSecurity": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "titleAddImage": "이미지 영역 선택",
+  "@titleAddImage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "titleGuestConnection": "다른 기기에 연결",
+  "@titleGuestConnection": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "titleHistory": "기록",
+  "@titleHistory": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "titleHostConnection": "연결코드 생성",
+  "@titleHostConnection": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "titleResult": "결과",
+  "@titleResult": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "validationServiceHost": "오류: 서비스 호스트는 비워둘 수 없습니다",
+  "@validationServiceHost": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "warnGenerateCode": "다른 기기에서 연결하기 전에 화면을 닫으면 연결 요청을 받을 수 없습니다.",
+  "@warnGenerateCode": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelFingerprint": "지문을 사용하여 잠금해제",
+  "@labelFingerprint": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "authenticatedReason": "앱을 사용하기 위해 인증이 필요합니다",
+  "@authenticatedReason": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "androidFingerprintHint": "지문 센서에 손가락을 올려주세요",
+  "@androidFingerprintHint": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "androidFingerprintNotRecognized": "지문이 인식되지 않았습니다. 다시 시도하세요.",
+  "@androidFingerprintNotRecognized": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "androidFingerprintSuccess": "지문이 인식되었습니다.",
+  "@androidFingerprintSuccess": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "androidCancelButton": "취소",
+  "@androidCancelButton": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "androidSignInTitle": "지문 확인",
+  "@androidSignInTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "androidFingerprintRequiredTitle": "지문 필요",
+  "@androidFingerprintRequiredTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "goToSettings": "설정으로 이동",
+  "@goToSettings": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "androidGoToSettingsDescription": "기기에 지문이 설정되어 있지 않습니다. 지문을 추가하려면 '설정 > 보안'으로 이동하십시오.",
+  "@androidGoToSettingsDescription": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "deviceName": "{displayName}의 {modelName}",
+  "@deviceName": {
+    "type": "text",
+    "placeholders": {
+      "displayName": {},
+      "modelName": {}
+    }
+  },
+  "labelConnectionRequest": "{deviceName}이(가) 연결을 요청합니다",
+  "@labelConnectionRequest": {
+    "type": "text",
+    "placeholders": {
+      "deviceName": {}
+    }
+  },
+  "resultCountMessage": "{resultsCount}개의 결과",
+  "@resultCountMessage": {
+    "type": "text",
+    "placeholders": {
+      "resultsCount": {}
+    }
+  }
+}

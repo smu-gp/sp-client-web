@@ -4,6 +4,7 @@ import 'package:flutter_web/material.dart';
 import 'package:sp_client/app.dart';
 import 'package:sp_client/bloc/simple_bloc_delegate.dart';
 import 'package:sp_client/repository/repositories.dart';
+import 'package:sp_client/util/config.dart';
 
 void main() async {
   BlocSupervisor.delegate = SimpleBlocDelegate();

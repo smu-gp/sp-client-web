@@ -1,0 +1,526 @@
+{
+  "@@locale": "en",
+  "@@last_modified": "2019-08-13T13:25:51.363063",
+  "actionAccept": "Accept",
+  "@actionAccept": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "actionAdd": "Add",
+  "@actionAdd": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "actionAddFolder": "Add folder",
+  "@actionAddFolder": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "actionAddMemo": "Add memo",
+  "@actionAddMemo": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "actionAddTextFromImage": "Add text from image",
+  "@actionAddTextFromImage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "actionConnect": "Connect",
+  "@actionConnect": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "actionConnection": "Connection",
+  "@actionConnection": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "actionCreateNewFolder": "Create new folder",
+  "@actionCreateNewFolder": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "actionDarkMode": "Dark mode",
+  "@actionDarkMode": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "actionDate": "Date",
+  "@actionDate": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "actionDelete": "Delete",
+  "@actionDelete": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "actionEdit": "Edit",
+  "@actionEdit": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "actionFolder": "Folder",
+  "@actionFolder": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "actionManageFolder": "Manage folder",
+  "@actionManageFolder": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "actionMoveFolder": "Move another folder",
+  "@actionMoveFolder": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "actionNotes": "Notes",
+  "@actionNotes": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "actionReject": "Reject",
+  "@actionReject": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "actionRemoveFolder": "Remove folder",
+  "@actionRemoveFolder": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "actionRename": "Rename",
+  "@actionRename": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "actionRenameFolder": "Rename folder",
+  "@actionRenameFolder": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "actionRetry": "Retry",
+  "@actionRetry": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "actionSecretFolder": "Secret folder",
+  "@actionSecretFolder": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "actionSendImage": "Send image",
+  "@actionSendImage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "actionSettings": "Settings",
+  "@actionSettings": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "actionSort": "Sort",
+  "@actionSort": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "appName": "sp_client",
+  "@appName": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "dialogConnectionWithDevice": "Connection with device?",
+  "@dialogConnectionWithDevice": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "dialogDeleteFolder": "All the notes in the folder are moved to the default folder. Delete folder?",
+  "@dialogDeleteFolder": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "dialogDeleteItem": "Are you sure to delete?",
+  "@dialogDeleteItem": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "dialogFolderSelect": "Folder Select",
+  "@dialogFolderSelect": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "dialogSendImage": "Send image...",
+  "@dialogSendImage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "errorEmptyCode": "Error: connection code is not empty",
+  "@errorEmptyCode": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "errorEmptyName": "Error: name is not empty",
+  "@errorEmptyName": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "folderDefault": "Default",
+  "@folderDefault": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "hintConnectAnotherDevice": "Connect another device by connection code",
+  "@hintConnectAnotherDevice": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "hintGenerateCode": "Generate code for connect another device",
+  "@hintGenerateCode": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "hintInputNote": "Note",
+  "@hintInputNote": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "hintInputTitle": "Title",
+  "@hintInputTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "hintName": "* Setting name to display on another devices",
+  "@hintName": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "imageFromCamera": "Take from camera",
+  "@imageFromCamera": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "imageFromGallery": "Select from gallery",
+  "@imageFromGallery": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelAppInitialize": "Initialize app...",
+  "@labelAppInitialize": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelAuthFailed": "Auth failed",
+  "@labelAuthFailed": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelChangePinCode": "Change pin code",
+  "@labelChangePinCode": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelConnectFailed": "Connect failed",
+  "@labelConnectFailed": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelConnectionCode": "Connection code",
+  "@labelConnectionCode": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelConnectSuccess": "Connect success",
+  "@labelConnectSuccess": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelDefaultMemoType": "Default memo type",
+  "@labelDefaultMemoType": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelDisconnectAnother": "Disconnect another device",
+  "@labelDisconnectAnother": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelHandWriting": "Hand writing",
+  "@labelHandWriting": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelInternalErr": "Internal server error",
+  "@labelInternalErr": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelLightTheme": "Light theme",
+  "@labelLightTheme": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelMarkdown": "Markdown",
+  "@labelMarkdown": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelName": "Name",
+  "@labelName": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelNoHostWaited": "No host waited",
+  "@labelNoHostWaited": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelNone": "None",
+  "@labelNone": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelQuickFolderClassification": "Quick folder classification",
+  "@labelQuickFolderClassification": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelRejectHost": "Reject by host",
+  "@labelRejectHost": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelResponseTimeout": "Host Response timeout",
+  "@labelResponseTimeout": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelRichText": "Rich text",
+  "@labelRichText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelServiceHost": "Service host",
+  "@labelServiceHost": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelServiceUnavailable": "Service Unavailable",
+  "@labelServiceUnavailable": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelUnnamed": "Unnamed",
+  "@labelUnnamed": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelUpdateProfile": "Update profile",
+  "@labelUpdateProfile": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelUseFingerprint": "Use fingerprint",
+  "@labelUseFingerprint": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelVersion": "Version",
+  "@labelVersion": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelWaitConnection": "Connection...",
+  "@labelWaitConnection": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelWaitHostResponse": "Waiting host response",
+  "@labelWaitHostResponse": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelWriteNewNoteOnStartup": "Write new note on startup",
+  "@labelWriteNewNoteOnStartup": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "memoEmpty": "Empty memo",
+  "@memoEmpty": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "memoError": "Error occurred",
+  "@memoError": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "orderByCreated": "Created date",
+  "@orderByCreated": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "orderByUpdated": "Updated date",
+  "@orderByUpdated": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "orderCreatedAsc": "Created date ascending",
+  "@orderCreatedAsc": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "orderCreatedDes": "Created date descending",
+  "@orderCreatedDes": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "orderType": "Order type",
+  "@orderType": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "orderTypeAsc": "Ascending",
+  "@orderTypeAsc": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "orderTypeDes": "Descending",
+  "@orderTypeDes": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "subtitleDebug": "Debug",
+  "@subtitleDebug": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "subtitleInfo": "Info",
+  "@subtitleInfo": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "subtitleNote": "Note",
+  "@subtitleNote": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "subtitleQuickFolderClassification": "Folder classification on write new note title",
+  "@subtitleQuickFolderClassification": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "subtitleSecurity": "Security",
+  "@subtitleSecurity": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "titleAddImage": "Select image area to send",
+  "@titleAddImage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "titleGuestConnection": "Connect another device",
+  "@titleGuestConnection": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "titleHistory": "History",
+  "@titleHistory": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "titleHostConnection": "Get connection code",
+  "@titleHostConnection": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "titleResult": "Result",
+  "@titleResult": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "validationServiceHost": "Error: service host is not empty",
+  "@validationServiceHost": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "warnGenerateCode": "If you close the screen before connecting from another device, you will not receive a connection request.",
+  "@warnGenerateCode": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelFingerprint": "Use fingerprint to unlock",
+  "@labelFingerprint": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "authenticatedReason": "Please authenticate to use app",
+  "@authenticatedReason": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "androidFingerprintHint": "Touch sensor",
+  "@androidFingerprintHint": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "androidFingerprintNotRecognized": "Fingerprint not recognized. Try again.",
+  "@androidFingerprintNotRecognized": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "androidFingerprintSuccess": "Fingerprint recognized.",
+  "@androidFingerprintSuccess": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "androidCancelButton": "Cancel",
+  "@androidCancelButton": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "androidSignInTitle": "Fingerprint Authentication",
+  "@androidSignInTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "androidFingerprintRequiredTitle": "Fingerprint required",
+  "@androidFingerprintRequiredTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "goToSettings": "Go to settings",
+  "@goToSettings": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "androidGoToSettingsDescription": "Fingerprint is not set up on your device. Go to 'Settings > Security' to add your fingerprint.",
+  "@androidGoToSettingsDescription": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "deviceName": "{displayName}'s {modelName}",
+  "@deviceName": {
+    "type": "text",
+    "placeholders": {
+      "displayName": {},
+      "modelName": {}
+    }
+  },
+  "labelConnectionRequest": "{deviceName} requests connection",
+  "@labelConnectionRequest": {
+    "type": "text",
+    "placeholders": {
+      "deviceName": {}
+    }
+  },
+  "resultCountMessage": "{resultsCount} result",
+  "@resultCountMessage": {
+    "type": "text",
+    "placeholders": {
+      "resultsCount": {}
+    }
+  }
+}
