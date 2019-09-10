@@ -38,7 +38,6 @@ class MainDrawer extends StatelessWidget {
 class MainDrawerMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var appConfig = Provider.of<AppConfig>(context);
     var drawerBloc = BlocProvider.of<MainDrawerBloc>(context);
     return BlocBuilder<MainDrawerBloc, MainDrawerState>(
       bloc: drawerBloc,
@@ -61,7 +60,7 @@ class MainDrawerMenu extends StatelessWidget {
               selectedFolder: state.folderId,
             ),
             Divider(),
-            if (!appConfig.runOnWeb)
+            if (!AppConfig.runOnWeb)
               _DrawerItem(
                 icon: OMIcons.phonelink,
                 title: Text(AppLocalizations.of(context).actionConnection),
@@ -396,12 +395,11 @@ class _FolderExpansionTileState extends State<_FolderExpansionTile> {
 class WebDisconnectButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var appConfig = Provider.of<AppConfig>(context, listen: false);
     var theme = Theme.of(context);
     var localizations = AppLocalizations.of(context);
 
     return Visibility(
-      visible: appConfig.runOnWeb,
+      visible: AppConfig.runOnWeb,
       child: Material(
         color: theme.accentColor,
         child: InkWell(
