@@ -1,8 +1,7 @@
-import 'package:flutter_web/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_web/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sp_client/bloc/auth/auth_bloc.dart';
-import 'package:sp_client/bloc/auth/auth_state.dart';
 import 'package:sp_client/model/web_auth.dart';
 import 'package:sp_client/service/protobuf/connection.pbgrpc.dart';
 import 'package:sp_client/util/localization.dart';
@@ -160,23 +159,23 @@ class _ConnectDeviceScreenState extends State<ConnectDeviceScreen> {
         ..connectionCode = code
         ..deviceInfo = currentDeviceInfo;
     } else {
-      var authState = _authBloc.currentState;
-      if (authState is Unauthenticated) {
-        return;
-      }
-
-      var deviceInfo = await DeviceInfoPlugin().androidInfo;
-      var modelName = deviceInfo.model;
-
-      var displayName = (authState as Authenticated).displayName ?? "";
-
-      var currentDeviceInfo = AuthDeviceInfo()
-        ..deviceType = AuthDeviceInfo_DeviceType.DEVICE_ANDROID
-        ..deviceName = "$displayName|$modelName";
-
-      authRequest = AuthRequest()
-        ..connectionCode = code
-        ..deviceInfo = currentDeviceInfo;
+//      var authState = _authBloc.currentState;
+//      if (authState is Unauthenticated) {
+//        return;
+//      }
+//
+//      var deviceInfo = await DeviceInfoPlugin().androidInfo;
+//      var modelName = deviceInfo.model;
+//
+//      var displayName = (authState as Authenticated).displayName ?? "";
+//
+//      var currentDeviceInfo = AuthDeviceInfo()
+//        ..deviceType = AuthDeviceInfo_DeviceType.DEVICE_ANDROID
+//        ..deviceName = "$displayName|$modelName";
+//
+//      authRequest = AuthRequest()
+//        ..connectionCode = code
+//        ..deviceInfo = currentDeviceInfo;
     }
 
     var result = await Navigator.push(

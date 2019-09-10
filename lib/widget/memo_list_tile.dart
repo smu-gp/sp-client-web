@@ -1,15 +1,12 @@
 import 'dart:math' as math;
 
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter_web/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:rich_text_editor/rich_text_editor.dart';
 import 'package:sp_client/model/models.dart';
 import 'package:sp_client/util/constants.dart';
 import 'package:sp_client/util/utils.dart';
-
-import 'loading_progress.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 class MemoListTile extends StatelessWidget {
   final Memo memo;
@@ -179,11 +176,10 @@ class _MemoContentImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return AspectRatio(
       aspectRatio: 1,
-      child: CachedNetworkImage(
-        imageUrl: url,
+      child: FadeInImage.memoryNetwork(
+        image: url,
         fit: BoxFit.fitWidth,
-        placeholder: (context, url) => LoadingProgress(),
-        errorWidget: (context, url, error) => Icon(Icons.error),
+        placeholder: kTransparentImage,
       ),
     );
   }

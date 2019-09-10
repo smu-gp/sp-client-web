@@ -1,6 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:outline_material_icons/outline_material_icons.dart';
+import 'package:flutter_web/material.dart';
 import 'package:rich_text_editor/rich_text_editor.dart';
 import 'package:sp_client/bloc/blocs.dart';
 import 'package:sp_client/model/models.dart';
@@ -8,7 +7,7 @@ import 'package:sp_client/repository/repositories.dart';
 import 'package:sp_client/util/localization.dart';
 import 'package:sp_client/util/utils.dart';
 import 'package:sp_client/widget/loading_progress.dart';
-import 'package:uuid/uuid.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 typedef ImageListCallback = void Function(int);
 
@@ -133,7 +132,7 @@ class _MemoScreenState extends State<MemoScreen> {
   void _updateMemo() {
     var titleText = _editTitleTextController.text;
     var contentText = _editContentTextController.text;
-    var contentStyleText = _editContentTextController.currentStyleList.toJson();
+    var contentStyleText = _editContentTextController.styleList.toJson();
 
     var memo = widget.memo;
     var isChanged = memo.title != titleText ||

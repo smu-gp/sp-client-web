@@ -1,11 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_web/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
-import 'package:sp_client/model/local_auth.dart';
 import 'package:sp_client/model/web_auth.dart';
 import 'package:sp_client/screen/init_screen.dart';
-import 'package:sp_client/screen/local_auth_screen.dart';
 import 'package:sp_client/screen/web/intro_screen.dart';
 import 'package:uuid/uuid.dart';
 
@@ -35,7 +32,7 @@ class _AppState extends State<App> {
   MemoRepository _memoRepository;
   FolderRepository _folderRepository;
 
-  bool _useFingerprint;
+//  bool _useFingerprint;
   String _userId;
   ThemeData _initTheme;
 
@@ -60,10 +57,10 @@ class _AppState extends State<App> {
         ChangeNotifierProvider<WebAuthenticate>(
           builder: (context) => WebAuthenticate(),
         ),
-      if (widget.config.useFingerprint)
-        ChangeNotifierProvider<LocalAuthenticate>(
-          builder: (context) => LocalAuthenticate(!_useFingerprint),
-        ),
+//      if (widget.config.useFingerprint)
+//        ChangeNotifierProvider<LocalAuthenticate>(
+//          builder: (context) => LocalAuthenticate(!_useFingerprint),
+//        ),
     ];
 
     var blocProviders = <BlocProvider>[
@@ -102,17 +99,17 @@ class _AppState extends State<App> {
       );
     }
 
-    if (widget.config.useFingerprint) {
-      home = Consumer<LocalAuthenticate>(
-        builder: (context, authenticate, _) {
-          if (authenticate.authenticated) {
-            return main;
-          } else {
-            return LocalAuthScreen();
-          }
-        },
-      );
-    }
+//    if (widget.config.useFingerprint) {
+//      home = Consumer<LocalAuthenticate>(
+//        builder: (context, authenticate, _) {
+//          if (authenticate.authenticated) {
+//            return main;
+//          } else {
+//            return LocalAuthScreen();
+//          }
+//        },
+//      );
+//    }
 
     return MultiProvider(
       providers: providers,
@@ -126,11 +123,8 @@ class _AppState extends State<App> {
                 onGenerateTitle: (context) =>
                     AppLocalizations.of(context).appName,
                 theme: themeState,
-                darkTheme: AppThemes.darkTheme,
                 localizationsDelegates: [
                   const AppLocalizationsDelegate(),
-                  GlobalMaterialLocalizations.delegate,
-                  GlobalWidgetsLocalizations.delegate,
                 ],
                 supportedLocales: [
                   const Locale('en', 'US'),
@@ -169,9 +163,9 @@ class _AppState extends State<App> {
             .setString(AppPreferences.keyUserId, _userId);
       }
 
-      _useFingerprint = widget.preferenceRepository
-              .getBool(AppPreferences.keyUseFingerprint) ??
-          false;
+//      _useFingerprint = widget.preferenceRepository
+//              .getBool(AppPreferences.keyUseFingerprint) ??
+//          false;
     }
   }
 

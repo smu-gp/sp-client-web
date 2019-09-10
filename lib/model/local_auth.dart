@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_web/material.dart';
 
 class LocalAuthenticate with ChangeNotifier {
   bool _authenticated = false;

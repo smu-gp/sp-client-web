@@ -1,10 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_web/material.dart';
-import 'package:flutter_web/src/rendering/sliver_multi_box_adaptor.dart';
 import 'package:provider/provider.dart';
 import 'package:sp_client/bloc/blocs.dart';
 import 'package:sp_client/model/models.dart';
-import 'package:sp_client/util/utils.dart';
 
 import 'empty_memo.dart';
 import 'error_memo.dart';
@@ -90,14 +88,15 @@ class MemoList extends StatelessWidget {
                       itemCount: memos.length,
                     );
                   } else {
-                    return StaggeredGridView.countBuilder(
-                      crossAxisCount: Util.isLarge(context) ? 3 : 2,
-                      mainAxisSpacing: 2,
-                      crossAxisSpacing: 2,
-                      itemBuilder: itemBuilder,
-                      itemCount: memos.length,
-                      staggeredTileBuilder: (index) => StaggeredTile.fit(1),
-                    );
+//                    return StaggeredGridView.countBuilder(
+//                      crossAxisCount: Util.isLarge(context) ? 3 : 2,
+//                      mainAxisSpacing: 2,
+//                      crossAxisSpacing: 2,
+//                      itemBuilder: itemBuilder,
+//                      itemCount: memos.length,
+//                      staggeredTileBuilder: (index) => StaggeredTile.fit(1),
+//                    );
+                    return Container();
                   }
                 },
               );
@@ -159,41 +158,5 @@ class MemoList extends StatelessWidget {
       }
     }
     return 0;
-  }
-}
-
-class _MemoGridList extends BoxScrollView {
-  @override
-  Widget buildChildLayout(BuildContext context) {
-    // TODO: implement buildChildLayout
-    return _SliverMemoGrid();
-  }
-}
-
-class _SliverMemoGrid extends SliverMultiBoxAdaptorWidget {
-  @override
-  RenderSliverMultiBoxAdaptor createRenderObject(BuildContext context) {
-    // TODO: implement createRenderObject
-    return RenderMemoGrid();
-  }
-}
-
-class RenderMemoGrid extends RenderSliverMultiBoxAdaptor {
-  RenderMemoGrid({
-    @required RenderSliverBoxChildManager childManager,
-  }) : super(childManager: childManager);
-
-  @override
-  double childCrossAxisPosition(RenderBox child) {
-    child.parentData;
-    return super.childCrossAxisPosition(child);
-  }
-
-  @override
-  void performLayout() {
-    childManager.didStartLayout();
-    childManager.setDidUnderflow(false);
-
-
   }
 }

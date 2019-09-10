@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_web/material.dart';
 import 'package:sp_client/screen/connection/connect_device_screen.dart';
 
 class WebIntroScreen extends StatefulWidget {
